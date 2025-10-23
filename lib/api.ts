@@ -43,12 +43,12 @@ export const createNote = async (noteData: NewNoteData): Promise<Note> => {
   return res.data;
 };
 
-export const deleteNote = async (noteId: number): Promise<Note> => {
+export const deleteNote = async (noteId: string): Promise<Note> => {
   const res = await noteServiceClient.delete<Note>(`/${noteId}`);
   return res.data;
 };
 
-export const fetchNoteById = async (id: number): Promise<Note> => {
+export const fetchNoteById = async (id: string): Promise<Note> => {
   const res = await noteServiceClient.get<Note>(`/${id}`);
   return res.data;
 };
